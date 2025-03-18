@@ -3,8 +3,13 @@ import json
 import pandas as pd
 
 
-API_URL = "https://api.energidataservice.dk/dataset/ElectricityProdex5MinRealtime"
-PARAMS = {"limit": 5, "PriceArea":"DK2"}
+API_URL = 'https://api.energidataservice.dk/dataset/DeclarationProduction'
+PARAMS = {
+    "start": "2025-01-01",
+    "end": "2025-01-27",
+    "limit": 0,
+    "filter": '{ "PriceArea": "DK2" }'
+}
 
 def fetch_data(url, params):
     """Fetch data from API with error handling."""
